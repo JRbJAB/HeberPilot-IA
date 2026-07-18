@@ -1,0 +1,14 @@
+{
+  "project": "HPIA",
+  "version": "HPIA_V57_ONE_FILE_BACKUP_CORE_0_1_2",
+  "traceId": "d85a1fb4",
+  "scriptId": "1TUL9-B-2_lsDzqJwgrv_JvxyWGAl4dyQ6fiecbIkzzAAvjjJAQMQU080",
+  "createdAt": "2026-07-09T11:39:41.592Z",
+  "fileCount": 14,
+  "rootDir": "apps-script",
+  "safety": {
+    "githubWrite": "OFF_IN_V57",
+    "noMenuCreatedByThisModule": true,
+    "oneFileInstall": true
+  }
+}
