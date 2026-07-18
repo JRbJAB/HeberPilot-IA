@@ -7,7 +7,8 @@ Published directly:
 - complete file index
 - Apps Script manifest
 - V57 one-file backup module
+- V64A global read-only audit module
 
-The remaining 12 historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
+The remaining 11 historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
-They were not expanded in this initial commit because the connected publication channel rejected those legacy source payloads during safety validation. The Drive ZIP remains the source of truth for future controlled imports.
+Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
