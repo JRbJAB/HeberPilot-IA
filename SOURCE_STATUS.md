@@ -10,6 +10,8 @@ Published directly:
 - V64A global read-only audit module
 - V65B public-safe script 97 source pieces audit module
 - Backup Drive / CLASP / GitHub runbook
+- V67 script naming and fusion doctrine
+- V67 script renaming target map
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -21,5 +23,12 @@ V65B decision:
 - keep private Drive IDs in Apps Script Script Properties;
 - do not commit property values;
 - keep the raw script in the verified Drive ZIP source of truth.
+
+V67 decision:
+- do not multiply Apps Script files by default;
+- fuse by business domain, technical function, or UI surface when useful;
+- converge installed scripts toward coherent `HPIA_<DOMAIN>_<ROLE>_<SCOPE>_vNN.gs` names;
+- hold V66 installation until a naming/fusion decision is made;
+- keep one real `onOpen` only.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
