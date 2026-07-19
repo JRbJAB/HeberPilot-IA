@@ -1,0 +1,19 @@
+menu_section,item_label,function_name,class,risk,target_surface,decision,notes
+Contrôles,Statut sécurité,gdvgShowSafetyStatus,ui_info,LOW,user_or_admin,keep,Safe UI alert.
+Contrôles,Contrôler dashboard,gdvgDryRunDashboard,audit_dashboard,MEDIUM,user,keep_with_readonly_guard,Reads formulas and writes QA log through helper.
+Contrôles,Contrôler gouvernance onglets,gdvgAuditGouvernanceOngletsDryRun,audit_governance,MEDIUM,admin_dev,move_to_admin,Uses hardcoded sheet list and QA log.
+Contrôles,Écrire log QA dry-run,gdvgWriteManualQaDryRun,qa_log_write,MEDIUM,admin_dev,move_to_admin,Append QA log despite dry-run label.
+Imports réservations,Lire ZIP Booking 2025 / CSV vers staging,gdvgLireZipBooking2025DryRun,drive_import_staging,HIGH,admin_dev,move_to_import_admin,Uses Drive folder and writes staging/register.
+Imports réservations,Contrôler import 2025 test,gdvgDryRunImport2025,staging_control,MEDIUM,admin_dev,keep_admin,Reads staging and writes QA log.
+Imports réservations,Airbnb transactions attente export,gdvgImportAirbnbTransactionsDryRun,placeholder,LOW,admin_dev,replace_later_by_airbnb_module,Currently logs placeholder.
+Imports réservations,Upsert réservation cadrage dry-run,gdvgUpsertReservationDryRun,placeholder_write_risk,MEDIUM,admin_dev,keep_hidden_until_real_design,Should not be user-facing until safe workflow exists.
+Preuves & Drive,Scanner dépôt partenaires,gdvgScanDepotPartenairesDryRun,drive_scan_register,HIGH,admin_dev,move_to_import_admin,Uses Drive folder and writes file registry.
+Preuves & Drive,Contrôler registre fichiers,gdvgCheckFilesRegistryDryRun,registry_check,MEDIUM,admin_dev,keep_admin,Writes QA log.
+Avis clients,Import avis multi-source dry-run,gdvgImportReviewsDryRun,placeholder,LOW,admin_dev,replace_by_reviews_module,Currently logs placeholder.
+Avis clients,Matrice livre d’or dry-run,gdvgCreateLivreOrTemplateDryRun,placeholder,LOW,admin_dev,replace_by_reviews_module,Currently logs placeholder.
+MEP Pro,Audit UI onglets clés,gdvgApplyUiProDryRun,placeholder_ui,MEDIUM,admin_dev,move_to_admin,Do not expose apply-like wording to user.
+MEP Pro,Contrôler notice HTML,gdvgCheckHtmlNoticeDryRun,placeholder,LOW,admin_dev,keep_admin,Currently logs placeholder.
+Sécurité & protections,Cartographier protections,gdvgProtectReferencesDryRun,protection_placeholder,HIGH,admin_dev,keep_admin_hidden,Protection functions are high risk.
+Sécurité & protections,Vérifier dernier lot script avant MAJ,gdvgAuditScriptLotsBeforeUpdateDryRun,script_update_gate,MEDIUM,admin_dev,keep_admin,Good governance check.
+Admin,Version script,gdvgVersion,ui_info,LOW,user_or_admin,keep,Safe alert.
+Admin,Ouvrir mode d’emploi,gdvgOpenHelp,navigation,LOW,user,keep,Activates help sheet.
