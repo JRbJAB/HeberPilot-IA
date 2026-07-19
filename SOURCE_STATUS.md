@@ -14,6 +14,8 @@ Published directly:
 - V67 script renaming target map
 - V68 script rationalization plan
 - V68 script migration matrix
+- V69 menu host audit
+- V69 menu item matrix
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -38,5 +40,12 @@ V68 decision:
 - V66 remains held and must not be installed as isolated sprawl;
 - the next safe step is V69 menu host audit, because the menu host contains the only real `onOpen`;
 - no Apps Script mutation, no CLASP, no install, no rename in V68.
+
+V69 decision:
+- the menu host is confirmed as the only real `onOpen`;
+- raw menu source is not published because it contains private Drive configuration;
+- split user menu and admin/dev menu before any patch;
+- classify dry-run functions that append QA/staging/register rows as staging/log writes, not strict read-only;
+- next safe step is V69B public-safe menu inventory and candidate menu map.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
