@@ -24,6 +24,9 @@ Published directly:
 - V69D menu patch candidate no-apply
 - V69D onOpen replacement candidate as documentation
 - V69D preflight result
+- V69E backup live gate
+- V69E detailed backup action
+- V69E preflight gate
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -74,5 +77,11 @@ V69D decision:
 - it must not be added as a new Apps Script file, because that would create a second `onOpen`;
 - no Apps Script mutation, no install and no CLASP were performed;
 - V69E is blocked until a fresh live Drive backup is created and compared with the d85a1fb4 base.
+
+V69E decision:
+- gate opened for a fresh live Apps Script backup before any menu installation;
+- no Apps Script menu patch, no CLASP and no GitHub script push were performed;
+- waiting for user-provided `HPIA_V57_backupSourceToDriveApply` log with `zipFileId`, `zipUrl`, `traceId`, `fileCount` and `blobCount`;
+- V69F will verify the new ZIP and compare the menu host before any installation plan.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
