@@ -1,0 +1,30 @@
+🏡 HéberPilot IA
+  Contrôles rapides
+    - Statut sécurité -> gdvgShowSafetyStatus
+    - Contrôler dashboard -> gdvgDryRunDashboard
+  Réservations
+    - Contrôler import 2025 test -> gdvgDryRunImport2025
+  Aide
+    - Ouvrir mode d'emploi -> gdvgOpenHelp
+    - Version script -> gdvgVersion
+
+🛠️ HPIA Admin Dev
+  Gouvernance
+    - Contrôler gouvernance onglets -> gdvgAuditGouvernanceOngletsDryRun
+    - Vérifier dernier lot script avant MAJ -> gdvgAuditScriptLotsBeforeUpdateDryRun
+    - Ajouter une trace QA -> gdvgWriteManualQaDryRun
+  Imports & staging
+    - Importer ZIP Booking vers staging test -> gdvgLireZipBooking2025DryRun
+    - Scanner dépôt partenaires -> gdvgScanDepotPartenairesDryRun
+    - Contrôler registre fichiers -> gdvgCheckFilesRegistryDryRun
+    - Upsert réservation cadrage dry-run -> gdvgUpsertReservationDryRun
+  Avis & réputation
+    - Import avis multi-source dry-run -> gdvgImportReviewsDryRun
+    - Matrice livre d'or dry-run -> gdvgCreateLivreOrTemplateDryRun
+  UI / protections
+    - Prévisualiser audit UI -> gdvgApplyUiProDryRun
+    - Contrôler notice HTML -> gdvgCheckHtmlNoticeDryRun
+    - Cartographier protections -> gdvgProtectReferencesDryRun
+  Diagnostics
+    - Statut sécurité -> gdvgShowSafetyStatus
+    - Version script -> gdvgVersion
