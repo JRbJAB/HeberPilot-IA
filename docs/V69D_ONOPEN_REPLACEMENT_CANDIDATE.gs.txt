@@ -1,0 +1,36 @@
+function onOpen() {
+  const ui = SpreadsheetApp.getUi();
+
+  ui.createMenu('🏡 HéberPilot IA')
+    .addSubMenu(ui.createMenu('✅ Contrôles rapides')
+      .addItem('🔐 Statut sécurité', 'gdvgShowSafetyStatus')
+      .addItem('🎛️ Contrôler dashboard', 'gdvgDryRunDashboard'))
+    .addSubMenu(ui.createMenu('📥 Réservations')
+      .addItem('📥 Contrôler import 2025 test', 'gdvgDryRunImport2025'))
+    .addSubMenu(ui.createMenu('ℹ️ Aide')
+      .addItem('📚 Ouvrir mode d’emploi', 'gdvgOpenHelp')
+      .addItem('ℹ️ Version script', 'gdvgVersion'))
+    .addToUi();
+
+  ui.createMenu('🛠️ HPIA Admin Dev')
+    .addSubMenu(ui.createMenu('🧭 Gouvernance')
+      .addItem('🧭 Contrôler gouvernance onglets', 'gdvgAuditGouvernanceOngletsDryRun')
+      .addItem('🧬 Vérifier dernier lot script avant MAJ', 'gdvgAuditScriptLotsBeforeUpdateDryRun')
+      .addItem('🧪 Ajouter une trace QA', 'gdvgWriteManualQaDryRun'))
+    .addSubMenu(ui.createMenu('📥 Imports & staging')
+      .addItem('📦 Importer ZIP Booking vers staging test', 'gdvgLireZipBooking2025DryRun')
+      .addItem('🧾 Scanner dépôt partenaires', 'gdvgScanDepotPartenairesDryRun')
+      .addItem('📁 Contrôler registre fichiers', 'gdvgCheckFilesRegistryDryRun')
+      .addItem('🔁 Upsert réservation cadrage dry-run', 'gdvgUpsertReservationDryRun'))
+    .addSubMenu(ui.createMenu('⭐ Avis & réputation')
+      .addItem('⭐ Import avis multi-source dry-run', 'gdvgImportReviewsDryRun')
+      .addItem('📘 Matrice livre d’or dry-run', 'gdvgCreateLivreOrTemplateDryRun'))
+    .addSubMenu(ui.createMenu('🎨 UI / protections')
+      .addItem('🎨 Prévisualiser audit UI', 'gdvgApplyUiProDryRun')
+      .addItem('📘 Contrôler notice HTML', 'gdvgCheckHtmlNoticeDryRun')
+      .addItem('🔐 Cartographier protections', 'gdvgProtectReferencesDryRun'))
+    .addSubMenu(ui.createMenu('🩺 Diagnostics')
+      .addItem('🔐 Statut sécurité', 'gdvgShowSafetyStatus')
+      .addItem('ℹ️ Version script', 'gdvgVersion'))
+    .addToUi();
+}
