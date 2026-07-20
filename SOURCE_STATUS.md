@@ -21,6 +21,9 @@ Published directly:
 - V69C candidate menu map no-apply
 - V69C candidate menu tree
 - V69C preflight checklist
+- V69D menu patch candidate no-apply
+- V69D onOpen replacement candidate as documentation
+- V69D preflight result
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -64,5 +67,12 @@ V69C decision:
 - still no Apps Script patch, no install, no CLASP and no active menu mutation;
 - V66 remains held and must not be mixed with menu work;
 - V69D can only be a code-only patch candidate after a fresh live Drive backup, function existence preflight, one-`onOpen` verification and explicit human approval.
+
+V69D decision:
+- a code-only replacement candidate for the existing `onOpen()` block was prepared;
+- the candidate is published as documentation only, not under `apps-script/`;
+- it must not be added as a new Apps Script file, because that would create a second `onOpen`;
+- no Apps Script mutation, no install and no CLASP were performed;
+- V69E is blocked until a fresh live Drive backup is created and compared with the d85a1fb4 base.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
