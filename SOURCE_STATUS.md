@@ -16,6 +16,8 @@ Published directly:
 - V68 script migration matrix
 - V69 menu host audit
 - V69 menu item matrix
+- V69B public-safe menu inventory
+- V69B target menu map
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -47,5 +49,11 @@ V69 decision:
 - split user menu and admin/dev menu before any patch;
 - classify dry-run functions that append QA/staging/register rows as staging/log writes, not strict read-only;
 - next safe step is V69B public-safe menu inventory and candidate menu map.
+
+V69B decision:
+- recommended user menu is reduced to safety, dashboard, import test control, version, help;
+- admin/dev menu carries governance, imports/staging, Drive scans, UI/protections and diagnostics;
+- functions with Drive scans, staging writes, QA append or protection actions should not be exposed in the normal user menu;
+- next safe step is V69C candidate menu map, still no apply.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
