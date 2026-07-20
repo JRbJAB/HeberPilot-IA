@@ -1,0 +1,10 @@
+check_id,check,required_before_v69d,status
+PF01,Nouveau backup live Drive créé,yes,pending
+PF02,onOpen unique vérifié,yes,pending
+PF03,Toutes les fonctions appelées existent,yes,pending
+PF04,Aucun second menu automatique,yes,pending
+PF05,Aucune source privée Drive publiée,yes,pending
+PF06,Libellés utilisateur/admin validés,yes,pending
+PF07,Plan rollback défini,yes,pending
+PF08,Patch candidat code-only préparé sans apply,yes,pending
+PF09,Accord humain avant installation,yes,pending
