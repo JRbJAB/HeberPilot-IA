@@ -1,0 +1,10 @@
+check_id,check,status,notes
+PF01,Nouveau backup live Drive créé,BLOCKING_PENDING,Doit être fait juste avant toute installation V69E.
+PF02,onOpen unique vérifié sur d85a1fb4,OK,Un seul function onOpen détecté dans le menu host.
+PF03,Toutes les fonctions appelées existent sur d85a1fb4,OK,17/17 fonctions candidates trouvées.
+PF04,Aucun second menu automatique sur d85a1fb4,OK,Aucun autre onOpen détecté dans la base auditée.
+PF05,Aucune source privée Drive publiée,OK,Publication GitHub limitée aux docs/candidat sans IDs privés.
+PF06,Libellés utilisateur/admin validés,CANDIDATE,Libellés proposés à valider humainement avant apply.
+PF07,Plan rollback défini,CANDIDATE,Rollback = restaurer bloc onOpen depuis backup live frais.
+PF08,Patch candidat code-only préparé sans apply,OK,Fichier candidat fourni; ne pas ajouter comme nouveau script.
+PF09,Accord humain avant installation,BLOCKING_PENDING,Installation seulement après GO explicite.
