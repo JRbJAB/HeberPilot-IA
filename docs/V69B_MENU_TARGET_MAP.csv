@@ -1,0 +1,20 @@
+target_menu,section,item_label,function_name,visibility,risk,decision
+USER,Contrôles rapides,Statut sécurité,gdvgShowSafetyStatus,visible,LOW,keep
+USER,Contrôles rapides,Contrôler dashboard,gdvgDryRunDashboard,visible,MEDIUM,keep_with_guard
+USER,Réservations,Contrôler import 2025 test,gdvgDryRunImport2025,visible,MEDIUM,keep_with_clear_label
+USER,Aide,Version script,gdvgVersion,visible,LOW,keep
+USER,Aide,Ouvrir mode d'emploi,gdvgOpenHelp,visible,LOW,keep
+ADMIN_DEV,Gouvernance,Contrôler gouvernance onglets,gdvgAuditGouvernanceOngletsDryRun,admin_only,MEDIUM,move_to_admin
+ADMIN_DEV,Gouvernance,Vérifier dernier lot script avant MAJ,gdvgAuditScriptLotsBeforeUpdateDryRun,admin_only,MEDIUM,move_to_admin
+ADMIN_DEV,Gouvernance,Ajouter une trace QA,gdvgWriteManualQaDryRun,admin_only,MEDIUM,move_to_admin
+ADMIN_DEV,Imports & staging,Importer ZIP Booking vers staging test,gdvgLireZipBooking2025DryRun,admin_only,HIGH,move_to_admin
+ADMIN_DEV,Imports & staging,Scanner dépôt partenaires,gdvgScanDepotPartenairesDryRun,admin_only,HIGH,move_to_admin
+ADMIN_DEV,Imports & staging,Contrôler registre fichiers,gdvgCheckFilesRegistryDryRun,admin_only,MEDIUM,move_to_admin
+ADMIN_DEV,Imports & staging,Upsert réservation cadrage dry-run,gdvgUpsertReservationDryRun,hidden_or_admin,HIGH,hide_until_real_design
+ADMIN_DEV,Avis & réputation,Import avis multi-source dry-run,gdvgImportReviewsDryRun,admin_only,LOW,replace_later
+ADMIN_DEV,Avis & réputation,Matrice livre d'or dry-run,gdvgCreateLivreOrTemplateDryRun,admin_only,LOW,replace_later
+ADMIN_DEV,UI / protections,Prévisualiser audit UI,gdvgApplyUiProDryRun,admin_only,MEDIUM,move_to_admin
+ADMIN_DEV,UI / protections,Contrôler notice HTML,gdvgCheckHtmlNoticeDryRun,admin_only,LOW,move_to_admin
+ADMIN_DEV,UI / protections,Cartographier protections,gdvgProtectReferencesDryRun,admin_only,HIGH,move_to_admin_hidden
+ADMIN_DEV,Diagnostics,Statut sécurité,gdvgShowSafetyStatus,admin_visible,LOW,keep_duplicate_ok
+ADMIN_DEV,Diagnostics,Version script,gdvgVersion,admin_visible,LOW,keep_duplicate_ok
