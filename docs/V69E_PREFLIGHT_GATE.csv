@@ -1,0 +1,10 @@
+check_id,check,status,notes
+PF01,HPIA_V57_backupStatus à lancer,WAITING_USER_LOG,Doit confirmer projects.getContent OK.
+PF02,HPIA_V57_backupSourceDryRun à lancer,WAITING_USER_LOG,Doit confirmer fileCount/blobCount sans ZIP.
+PF03,HPIA_V57_ALLOW_SOURCE_BACKUP_WRITE TRUE temporaire,WAITING_USER_ACTION,Uniquement avant APPLY.
+PF04,HPIA_V57_backupSourceToDriveApply à lancer,WAITING_USER_LOG,Doit créer le nouveau ZIP live Drive.
+PF05,HPIA_V57_ALLOW_SOURCE_BACKUP_WRITE remis à FALSE,WAITING_USER_CONFIRMATION,Obligatoire après APPLY.
+PF06,Nouveau zipFileId fourni,WAITING_USER_LOG,Nécessaire pour V69F.
+PF07,Nouveau zipUrl fourni,WAITING_USER_LOG,Nécessaire pour V69F.
+PF08,Aucune installation menu en V69E,OK,V69E est un gate backup uniquement.
+PF09,Aucun CLASP en V69E,OK,No CLASP.
