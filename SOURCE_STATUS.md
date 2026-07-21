@@ -30,6 +30,10 @@ Published directly:
 - V69F fresh backup verification and menu comparison
 - V69F file delta
 - V69F preflight result
+- V69G controlled menu install plan
+- V69G detailed install action
+- V69G preflight checklist
+- V69G rollback plan
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -94,5 +98,14 @@ V69F decision:
 - the menu host `GDVG Cockpit - Controles & Reservations.gs` is stable versus `d85a1fb4` by ZIP entry CRC/size comparison;
 - V69D does not require rebase before the next controlled installation planning step;
 - no Apps Script mutation, no CLASP, no active menu apply and no active script publication were performed.
+
+V69G decision:
+- controlled installation plan prepared for the V69D menu candidate;
+- target remains the existing `onOpen` block in `GDVG Cockpit - Controles & Reservations.gs` only;
+- no new Apps Script file may be created;
+- no second `onOpen` is allowed;
+- rollback and preflight are documented;
+- no Apps Script mutation, no CLASP, and no active menu apply were performed in V69G;
+- next action requires explicit `GO INSTALL MENU`.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
