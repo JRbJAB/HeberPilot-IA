@@ -36,6 +36,9 @@ Published directly:
 - V69G rollback plan
 - V70 menu Backup Drive / CLASP / GitHub candidate
 - V70 onOpen replacement candidate as public-safe documentation
+- V70R2 active menu merge-preserve status
+- V70R3 legacy menu host onOpen neutralization status
+- V71 Backup Drive / CLASP / GitHub sync status
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -118,5 +121,26 @@ V70 decision:
 - GitHub auto-push from Apps Script is not active and is not added by V70;
 - the public GitHub candidate redacts private Drive folder details; use the Drive-ranged V70 file for installation;
 - no Apps Script mutation, no CLASP, no GitHub write from Apps Script, no second `onOpen`, and no new Apps Script file were performed.
+
+V70R2 decision:
+- complete merge-preserve menu replacement prepared and installed by the operator;
+- two top-level menus are expected: `HeberPilot IA` and `HPIA Admin Dev`;
+- Backup Drive is active through V57 functions;
+- CLASP and GitHub are visible as status/handoff workflows, not automatic execution;
+- Help/Aide, controls, reservations, governance, imports, reviews, UI/protection and diagnostics entries are preserved.
+
+V70R3 decision:
+- the historical GDVG Cockpit menu host must no longer expose its own active `function onOpen()` once V70R2 is the active menu host;
+- the legacy onOpen is neutralized as `HPIA_LEGACY_onOpen_DISABLED_v70_20260721` in the complete replacement file;
+- business functions in the historical file are preserved;
+- final cleanup and renaming must be handled in a later dedicated script rationalization wave.
+
+V71 decision:
+- latest live backup `510276fd` was created by V57 with `fileCount=17` and `blobCount=22`;
+- Drive ZIP file is `16KTU_qtN9oZC-LIALsjHrns0k08JSOeW` and is the latest source-of-truth backup at this gate;
+- the V57 process creates Backup Drive + CLASP-ready structure + GitHub handoff artifacts;
+- the V57 process does not execute local CLASP and does not push GitHub automatically;
+- GitHub was updated with this public-safe V71 status document;
+- no Apps Script mutation, no CLASP operation and no GitHub auto-push from the sheet/menu were performed in V71.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
