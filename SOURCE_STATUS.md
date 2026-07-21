@@ -34,6 +34,8 @@ Published directly:
 - V69G detailed install action
 - V69G preflight checklist
 - V69G rollback plan
+- V70 menu Backup Drive / CLASP / GitHub candidate
+- V70 onOpen replacement candidate as public-safe documentation
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -107,5 +109,14 @@ V69G decision:
 - rollback and preflight are documented;
 - no Apps Script mutation, no CLASP, and no active menu apply were performed in V69G;
 - next action requires explicit `GO INSTALL MENU`.
+
+V70 decision:
+- V69D did not expose Backup Drive / CLASP / GitHub in the Admin Dev menu;
+- V70 prepares a complete current replacement menu block plus safe helper functions;
+- Backup Drive is active through the installed V57 functions;
+- CLASP is not executable from Apps Script and remains an operator-controlled workflow;
+- GitHub auto-push from Apps Script is not active and is not added by V70;
+- the public GitHub candidate redacts private Drive folder details; use the Drive-ranged V70 file for installation;
+- no Apps Script mutation, no CLASP, no GitHub write from Apps Script, no second `onOpen`, and no new Apps Script file were performed.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
