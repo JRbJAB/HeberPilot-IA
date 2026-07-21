@@ -1,0 +1,181 @@
+/**
+ * HPIA V70R1 - onOpen replacement + safe Backup / CLASP / GitHub helpers.
+ *
+ * FIX V70R1:
+ * - HPIA_V70_showClaspGithubStatus() can be executed from the Apps Script editor.
+ * - If Spreadsheet UI is unavailable, it logs and returns a JSON status instead of crashing.
+ *
+ * INSTALLATION RULE:
+ * - Do not create a second onOpen.
+ * - Replace the existing V70 block in the current menu host only.
+ * - Keep the helper functions in the same existing menu host file.
+ */
+function onOpen() {
+  const ui = SpreadsheetApp.getUi();
+
+  ui.createMenu('🏡 HéberPilot IA')
+    .addSubMenu(ui.createMenu('✅ Contrôles rapides')
+      .addItem('🔐 Statut sécurité', 'gdvgShowSafetyStatus')
+      .addItem('🎛️ Contrôler dashboard', 'gdvgDryRunDashboard'))
+    .addSubMenu(ui.createMenu('📥 Réservations')
+      .addItem('📥 Contrôler import 2025 test', 'gdvgDryRunImport2025'))
+    .addSubMenu(ui.createMenu('ℹ️ Aide')
+      .addItem('📚 Ouvrir mode d’emploi', 'gdvgOpenHelp')
+      .addItem('ℹ️ Version script', 'gdvgVersion'))
+    .addToUi();
+
+  ui.createMenu('🛠️ HPIA Admin Dev')
+    .addSubMenu(ui.createMenu('💾 Backup Drive / CLASP / GitHub')
+      .addItem('💾 Statut backup live Drive', 'HPIA_V57_backupStatus')
+      .addItem('🧪 Dry-run backup live Drive', 'HPIA_V57_backupSourceDryRun')
+      .addItem('📦 Créer ZIP backup live Drive', 'HPIA_V57_backupSourceToDriveApply')
+      .addSeparator()
+      .addItem('🔎 Statut CLASP / GitHub', 'HPIA_V70_showClaspGithubStatus')
+      .addItem('📁 Ouvrir dossier backups Drive', 'HPIA_V70_openBackupDriveFolder')
+      .addItem('🌐 Ouvrir dépôt GitHub', 'HPIA_V70_openGithubRepo'))
+    .addSubMenu(ui.createMenu('🧭 Gouvernance')
+      .addItem('🧭 Contrôler gouvernance onglets', 'gdvgAuditGouvernanceOngletsDryRun')
+      .addItem('🧬 Vérifier dernier lot script avant MAJ', 'gdvgAuditScriptLotsBeforeUpdateDryRun')
+      .addItem('🧪 Ajouter une trace QA', 'gdvgWriteManualQaDryRun'))
+    .addSubMenu(ui.createMenu('📥 Imports & staging')
+      .addItem('📦 Importer ZIP Booking vers staging test', 'gdvgLireZipBooking2025DryRun')
+      .addItem('🧾 Scanner dépôt partenaires', 'gdvgScanDepotPartenairesDryRun')
+      .addItem('📁 Contrôler registre fichiers', 'gdvgCheckFilesRegistryDryRun')
+      .addItem('🔁 Upsert réservation cadrage dry-run', 'gdvgUpsertReservationDryRun'))
+    .addSubMenu(ui.createMenu('⭐ Avis & réputation')
+      .addItem('⭐ Import avis multi-source dry-run', 'gdvgImportReviewsDryRun')
+      .addItem('📘 Matrice livre d’or dry-run', 'gdvgCreateLivreOrTemplateDryRun'))
+    .addSubMenu(ui.createMenu('🎨 UI / protections')
+      .addItem('🎨 Prévisualiser audit UI', 'gdvgApplyUiProDryRun')
+      .addItem('📘 Contrôler notice HTML', 'gdvgCheckHtmlNoticeDryRun')
+      .addItem('🔐 Cartographier protections', 'gdvgProtectReferencesDryRun'))
+    .addSubMenu(ui.createMenu('🩺 Diagnostics')
+      .addItem('🔐 Statut sécurité', 'gdvgShowSafetyStatus')
+      .addItem('ℹ️ Version script', 'gdvgVersion'))
+    .addToUi();
+}
+
+function HPIA_V70_showClaspGithubStatus() {
+  const status = HPIA_V70_getClaspGithubStatus_();
+  const message = HPIA_V70_formatStatusMessage_(status);
+
+  try {
+    SpreadsheetApp.getUi().alert(message);
+  } catch (err) {
+    Logger.log(JSON.stringify(status, null, 2));
+  }
+
+  return status;
+}
+
+function HPIA_V70_openBackupDriveFolder() {
+  return HPIA_V70_openLinkOrLog_(
+    'Dossier backups live Apps Script',
+    'URL du dossier backup Drive - voir documentation Drive privée V70R1'
+  );
+}
+
+function HPIA_V70_openGithubRepo() {
+  return HPIA_V70_openLinkOrLog_(
+    'Dépôt GitHub HéberPilot IA',
+    'https://github.com/JRbJAB/HeberPilot-IA'
+  );
+}
+
+function HPIA_V70_getClaspGithubStatus_() {
+  return {
+    ok: true,
+    version: 'HPIA_V70R1_MENU_BACKUP_CLASP_GITHUB_2026_07_21',
+    mode: 'STATUS_UI_OR_LOG_SAFE',
+    backupDrive: {
+      status: 'ACTIVE_VIA_HPIA_V57',
+      functions: [
+        'HPIA_V57_backupStatus',
+        'HPIA_V57_backupSourceDryRun',
+        'HPIA_V57_backupSourceToDriveApply'
+      ],
+      note: 'APPLY remains gated by Script Properties.'
+    },
+    clasp: {
+      status: 'NOT_ACTIVE_FROM_APPS_SCRIPT',
+      reason: 'Apps Script cannot execute the local clasp binary.',
+      recommendedUse: 'Use generated CLASP structure from live backup ZIP in a controlled operator workflow.'
+    },
+    github: {
+      status: 'REPO_INITIALIZED_NO_AUTOPUSH_FROM_MENU',
+      repoUrl: 'https://github.com/JRbJAB/HeberPilot-IA',
+      note: 'No GitHub write is performed by this menu.'
+    },
+    doctrine: {
+      completeReplacementScriptRequired: true,
+      noSecondOnOpen: true,
+      noScriptSprawl: true,
+      fusionByBusinessFunctionOrUi: true
+    }
+  };
+}
+
+function HPIA_V70_formatStatusMessage_(status) {
+  return [
+    'HPIA Backup / CLASP / GitHub',
+    '',
+    'Backup live Drive : ACTIF via HPIA_V57.',
+    'Fonctions disponibles :',
+    '- HPIA_V57_backupStatus',
+    '- HPIA_V57_backupSourceDryRun',
+    '- HPIA_V57_backupSourceToDriveApply',
+    '',
+    'CLASP : NON actif depuis Apps Script.',
+    'Raison : Apps Script ne peut pas lancer le binaire local clasp.',
+    '',
+    'GitHub : dépôt initialisé, mais pas de push automatique depuis ce menu.',
+    'Repo : ' + status.github.repoUrl,
+    '',
+    'Règle gravée : toujours fournir une version complète à jour du script à remplacer.'
+  ].join('\n');
+}
+
+function HPIA_V70_openLinkOrLog_(title, url) {
+  try {
+    HPIA_V70_showLinkDialog_(title, url);
+  } catch (err) {
+    const status = {
+      ok: true,
+      mode: 'LINK_LOG_ONLY_UI_UNAVAILABLE',
+      title: title,
+      url: url,
+      message: 'UI unavailable in this execution context. Open the URL manually.'
+    };
+    Logger.log(JSON.stringify(status, null, 2));
+    return status;
+  }
+
+  return {
+    ok: true,
+    mode: 'LINK_DIALOG_OPENED',
+    title: title,
+    url: url
+  };
+}
+
+function HPIA_V70_showLinkDialog_(title, url) {
+  const safeTitle = String(title).replace(/[<>&"]/g, function (c) {
+    return ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c];
+  });
+  const safeUrl = String(url).replace(/[<>&"]/g, function (c) {
+    return ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c];
+  });
+
+  const html = HtmlService
+    .createHtmlOutput(
+      '<div style="font:14px Arial,sans-serif;padding:16px;line-height:1.45">' +
+      '<h2 style="font-size:16px;margin:0 0 12px">' + safeTitle + '</h2>' +
+      '<p><a href="' + safeUrl + '" target="_blank" rel="noopener noreferrer">Ouvrir le lien</a></p>' +
+      '<p style="color:#555;word-break:break-all">' + safeUrl + '</p>' +
+      '</div>'
+    )
+    .setWidth(460)
+    .setHeight(190);
+
+  SpreadsheetApp.getUi().showModalDialog(html, safeTitle);
+}
