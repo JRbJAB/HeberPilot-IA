@@ -27,6 +27,9 @@ Published directly:
 - V69E backup live gate
 - V69E detailed backup action
 - V69E preflight gate
+- V69F fresh backup verification and menu comparison
+- V69F file delta
+- V69F preflight result
 
 The remaining historical business scripts are preserved byte-for-byte in the verified Drive ZIP identified by trace `d85a1fb4` and SHA-256 `5d7a1f657280110f2f194eac25807039db642a6270986eec8d8bf6a25ec5cb98`.
 
@@ -83,5 +86,13 @@ V69E decision:
 - no Apps Script menu patch, no CLASP and no GitHub script push were performed;
 - waiting for user-provided `HPIA_V57_backupSourceToDriveApply` log with `zipFileId`, `zipUrl`, `traceId`, `fileCount` and `blobCount`;
 - V69F will verify the new ZIP and compare the menu host before any installation plan.
+
+V69F decision:
+- fresh live backup `21449c49` was created in Drive by Apps Script and verified from the user log;
+- fileCount increased from `14` to `16`, blobCount from `19` to `21`;
+- the two added scripts are `HPIA_P0A_READINESS_AUDIT_DRY_RUN.gs` and `97_GDVG_V44A2_SOURCE_PIECES_AND_IMPORT_MODELS_AUDIT_NO_WRITE_INSTALL_READY.gs`;
+- the menu host `GDVG Cockpit - Controles & Reservations.gs` is stable versus `d85a1fb4` by ZIP entry CRC/size comparison;
+- V69D does not require rebase before the next controlled installation planning step;
+- no Apps Script mutation, no CLASP, no active menu apply and no active script publication were performed.
 
 Three additional read-only candidates passed static audit but were rejected by the connected publication channel during payload safety validation. The Drive ZIP remains the source of truth for future controlled imports.
