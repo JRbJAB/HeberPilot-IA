@@ -1,0 +1,4 @@
+path,status,old_length,old_compressed_length,old_crc32,new_length,new_compressed_length,new_crc32,decision
+apps-script/GDVG Cockpit - Controles & Reservations.gs,UNCHANGED_MENU_HOST,33269,9695,1167336014,33269,9695,1167336014,V69D_rebase_not_required
+apps-script/HPIA_P0A_READINESS_AUDIT_DRY_RUN.gs,ADDED,,,,,,,audit_dry_run_added_since_d85a1fb4
+apps-script/97_GDVG_V44A2_SOURCE_PIECES_AND_IMPORT_MODELS_AUDIT_NO_WRITE_INSTALL_READY.gs,ADDED,,,,,,,install_ready_script97_added_since_d85a1fb4
