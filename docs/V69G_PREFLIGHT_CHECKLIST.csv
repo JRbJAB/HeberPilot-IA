@@ -1,0 +1,12 @@
+check_id,check,expected,blocking_if_failed
+P0A,Fresh backup exists,21449c49 verified,YES
+P0B,Only one onOpen before edit,1 occurrence in GDVG Cockpit host,YES
+P0C,V69D candidate not installed as separate file,No new script file,YES
+P0D,Edit scope,Only existing function onOpen block,YES
+P0E,No CLASP operation,No clasp push/pull required,YES
+P0F,No trigger change,No trigger create/delete,YES
+P0G,Backup before install,zipUrl and traceId captured,YES
+P0H,Backup after install,zipUrl and traceId captured,YES
+P1A,User menu visible,Expected reduced user menu,YES
+P1B,Admin-dev menu visible or accessible,Expected admin/dev split,YES
+P1C,No duplicated menu,Only intended menu surfaces,YES
