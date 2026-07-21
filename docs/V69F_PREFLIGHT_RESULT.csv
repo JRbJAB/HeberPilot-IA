@@ -1,0 +1,2 @@
+status,old_trace,new_trace,old_file_count,new_file_count,old_blob_count,new_blob_count,decision
+OK_HPIA_V69F_NEW_LIVE_BACKUP_VERIFIED_MENU_HOST_STABLE_NO_APPLY,d85a1fb4,21449c49,14,16,19,21,V69D_candidate_still_applicable_no_apply
